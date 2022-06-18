@@ -124,6 +124,15 @@ namespace TrackMaker {
         }
         
         /// <summary>
+        ///   Text Format に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string TextFormat {
+            get {
+                return ResourceManager.GetString("TextFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Track に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Track {

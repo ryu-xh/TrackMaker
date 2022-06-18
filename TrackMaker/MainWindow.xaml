@@ -9,15 +9,18 @@
     <Grid>
         <ComboBox x:Name="SingerCombo" HorizontalAlignment="Left" Margin="125,37,0,0" VerticalAlignment="Top" Width="110" />
         <Button x:Name="SaveFile" Content="{x:Static local:Strings.SaveUstxFile}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110" Click="OpenFile_Click" Height="22"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,65,0,0" TextWrapping="Wrap" Text="{x:Static local:Strings.Track}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="{x:Static local:Strings.Track}" VerticalAlignment="Top"/>
         <Button x:Name="OpenTextFile" Content="{x:Static local:Strings.OpenTextFile}" HorizontalAlignment="Left" Margin="125,10,0,0" VerticalAlignment="Top" Width="110" Height="22" Click="OpenTextFile_Click"/>
         <ComboBox x:Name="ToneCombo" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="110"/>
-        <RadioButton x:Name="SplitType0" Content="{x:Static local:Strings.SplitTypeDefault}" HorizontalAlignment="Left" Margin="298,37,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton x:Name="SplitType1" Content="{x:Static local:Strings.SplitTypeUnderscore}" HorizontalAlignment="Left" Margin="298,57,0,0" VerticalAlignment="Top"/>
+        <RadioButton GroupName="separator" x:Name="SplitType0" Content="{x:Static local:Strings.SplitTypeDefault}" HorizontalAlignment="Left" Margin="298,37,0,0" VerticalAlignment="Top" IsChecked="True" IsThreeState="True"/>
+        <RadioButton GroupName="separator" x:Name="SplitType1" Content="{x:Static local:Strings.SplitTypeUnderscore}" HorizontalAlignment="Left" Margin="298,57,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="PhonemizerCombo" Margin="240,10,10.2,0" VerticalAlignment="Top" />
         <TextBox x:Name="bpmText" HorizontalAlignment="Left" Height="20" Margin="241,51,0,0" TextWrapping="Wrap" Text="120" VerticalAlignment="Top" Width="30" IsEnabled="False" Focusable="False" IsTabStop="False" TextAlignment="Center"/>
         <Label Content="BPM" HorizontalAlignment="Left" Margin="239,30,0,0" VerticalAlignment="Top" Height="24"/>
-        <ListBox x:Name="TrackList" Margin="10,86,10,10"/>
+        <ListBox x:Name="TrackList" Margin="10,105,10.2,10"/>
         <ScrollBar x:Name="bpmScroll" HorizontalAlignment="Left" Height="34" Margin="273,37,0,0" VerticalAlignment="Top" Width="3" Value="103" Maximum="240" Minimum="1" SmallChange="1" Scroll="bpmScroll_Scroll"/>
+        <RadioButton GroupName="format" x:Name="UTF8Radio" Content="UTF-8" HorizontalAlignment="Left" Margin="121,64,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton GroupName="format" x:Name="shiftJisRadio" Content="shift-jis" HorizontalAlignment="Left" Margin="177,64,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,64,0,0" TextWrapping="Wrap" Text="{x:Static local:Strings.TextFormat}" VerticalAlignment="Top"/>
     </Grid>
 </Window>

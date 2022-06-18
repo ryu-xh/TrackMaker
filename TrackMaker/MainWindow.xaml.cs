@@ -160,7 +160,7 @@ namespace TrackMaker
                 {
 
                     Console.WriteLine(TrackList.Items[i]);
-                    ustx += "- name: " + TrackList.Items[i] + "\n";
+                    ustx += "- name: " + TrackList.Items[i].ToString() + "\n";
                     ustx += "  comment: ''\n";
                     ustx += "  track_no: " + i.ToString() + "\n";
                     ustx += "  position: 0\n";
@@ -235,7 +235,15 @@ namespace TrackMaker
 
             if (openFileDialog.ShowDialog() == true)
             {
-                string[] lines = File.ReadAllLines(openFileDialog.FileName, Encoding.GetEncoding("shift_jis"));
+                string[] lines;
+                if (UTF8Radio.IsChecked == true)
+                {
+                    lines = File.ReadAllLines(openFileDialog.FileName, Encoding.UTF8);
+                } else
+                {
+                    lines = File.ReadAllLines(openFileDialog.FileName, Encoding.GetEncoding("shift_jis"));
+                }
+                
 
 
                 foreach (string line in lines)

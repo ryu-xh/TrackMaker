@@ -138,6 +138,9 @@
   <data name="SplitTypeUnderscore" xml:space="preserve">
     <value>アンダーバーセパレーター</value>
   </data>
+  <data name="TextFormat" xml:space="preserve">
+    <value>テキストフォーマット</value>
+  </data>
   <data name="Track" xml:space="preserve">
     <value>トラック</value>
   </data>

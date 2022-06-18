@@ -138,6 +138,9 @@
   <data name="SplitTypeUnderscore" xml:space="preserve">
     <value>언더스코어 구분자</value>
   </data>
+  <data name="TextFormat" xml:space="preserve">
+    <value>텍스트 포맷</value>
+  </data>
   <data name="Track" xml:space="preserve">
     <value>트랙</value>
   </data>
