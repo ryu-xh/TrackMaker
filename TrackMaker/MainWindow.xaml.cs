@@ -74,6 +74,7 @@ namespace TrackMaker
             PhonemizerCombo.Items.Add("BrazilianPortugueseCVCPhonemizer");
             PhonemizerCombo.Items.Add("ChineseCVVCPhonemizer");
             PhonemizerCombo.Items.Add("ChineseCVVPhonemizer");
+            PhonemizerCombo.Items.Add("DefaultPhonemizer");
             PhonemizerCombo.Items.Add("EnglishVCCVPhonemizer");
             PhonemizerCombo.Items.Add("ENtoJAPhonemizer");
             PhonemizerCombo.Items.Add("FrenchCMUSphinxPhonemizer");
@@ -137,6 +138,8 @@ namespace TrackMaker
         private void SaveUstxFile()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Ustx File|*.ustx";
+
             if (saveFileDialog.ShowDialog() == true)
             {
                 string ustx = "name: New Project\ncomment: ''\noutput_dir: Vocal\ncache_dir: UCache\nustx_version: 0.5\n";
@@ -148,7 +151,7 @@ namespace TrackMaker
                 for (int i = 0; i < TrackList.Items.Count; i++)
                 {
                     ustx += "- singer: " + SingerCombo.Text + "\n";
-                    ustx += "  phonemizer: OpenUtau.Plugin.Builtin." + PhonemizerCombo.Text + "\n";
+                    ustx += "  phonemizer: OpenUtau.Plugin.Builtin." + PhonemizerList.Items[i] + "\n";
                     ustx += "  renderer: CLASSIC\n";
                     ustx += "  mute: false\n  solo: false\n  volume: 0\n";
                 }
@@ -172,13 +175,12 @@ namespace TrackMaker
                     if (SplitType0.IsChecked == true)
                     {
                         // 글자 단위 분리
-                        Regex lyricRegex = new Regex("([가-힣あ-んア-ン][ぁぃぅぇぉゃ-ょァィゥェォャ-ョ][ぁぃぅぇぉァィゥェォ]|[가-힣あ-んア-ン][ぁぃぅぇぉゃ-ょァィゥェォャ-ョ]|[가-힣あ-んア-ン])");
+                        Regex lyricRegex = new Regex("([가-힣あ-んア-ヴ][ぁぃぅぇぉゃゅょァィゥェォャュョ][ぁぃぅぇぉァィゥェォ]|[가-힣あ-んア-ヴ][ぁぃぅぇぉゃゅょァィゥェォャュョ]|[가-힣あ-んア-ヴ])");
 
                         int j = 0;
                         while(str != "")
                         {
                             Match m = lyricRegex.Match(str);
-
 
                             if (m.Success)
                             {
@@ -252,6 +254,7 @@ namespace TrackMaker
                     {
                         Console.WriteLine(line);
                         TrackList.Items.Add(line);
+                        PhonemizerList.Items.Add(PhonemizerCombo.Text);
                     }
                     
                 }
