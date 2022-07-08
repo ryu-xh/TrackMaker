@@ -145,6 +145,7 @@ namespace TrackMaker
                 string ustx = "name: New Project\ncomment: ''\noutput_dir: Vocal\ncache_dir: UCache\nustx_version: 0.5\n";
                 ustx += "bpm: " + bpmText.Text + "\n";
                 ustx += "beat_per_bar: 4\nbeat_unit: 4\nresolution: 480\n";
+                ustx += "expressions:\n  dyn:\n    name: dynamics (curve)\n    abbr: dyn\n    type: Curve\n    min: -240\n    max: 120\n    default_value: 0\n    is_flag: false\n    flag: ''\n  pitd:\n    name: pitch deviation (curve)\n    abbr: pitd\n    type: Curve\n    min: -1200\n    max: 1200\n    default_value: 0\n    is_flag: false\n    flag: ''\n  clr:\n    name: voice color\n    abbr: clr\n    type: Options\n    min: 0\n    max: 0\n    default_value: 0\n    is_flag: false\n    options:\n    - ''\n  eng:\n    name: resampler engine\n    abbr: eng\n    type: Options\n    min: 0\n    max: 1\n    default_value: 0\n    is_flag: false\n    options:\n    - ''\n    - worldline\n  vel:\n    name: velocity\n    abbr: vel\n    type: Numerical\n    min: 0\n    max: 200\n    default_value: 100\n    is_flag: false\n    flag: ''\n  vol:\n    name: volume\n    abbr: vol\n    type: Numerical\n    min: 0\n    max: 200\n    default_value: 100\n    is_flag: false\n    flag: ''\n  atk:\n    name: attack\n    abbr: atk\n    type: Numerical\n    min: 0\n    max: 200\n    default_value: 100\n    is_flag: false\n    flag: ''\n  dec:\n    name: decay\n    abbr: dec\n    type: Numerical\n    min: 0\n    max: 100\n    default_value: 0\n    is_flag: false\n    flag: ''\n  gen:\n    name: gender\n    abbr: gen\n    type: Numerical\n    min: -100\n    max: 100\n    default_value: 0\n    is_flag: true\n    flag: g\n  genc:\n    name: gender (curve)\n    abbr: genc\n    type: Curve\n    min: -100\n    max: 100\n    default_value: 0\n    is_flag: false\n    flag: ''\n  bre:\n    name: breath\n    abbr: bre\n    type: Numerical\n    min: 0\n    max: 100\n    default_value: 0\n    is_flag: true\n    flag: B\n  brec:\n    name: breathiness (curve)\n    abbr: brec\n    type: Curve\n    min: -100\n    max: 100\n    default_value: 0\n    is_flag: false\n    flag: ''\n  lpf:\n    name: lowpass\n    abbr: lpf\n    type: Numerical\n    min: 0\n    max: 100\n    default_value: 0\n    is_flag: true\n    flag: H\n  mod:\n    name: modulation\n    abbr: mod\n    type: Numerical\n    min: 0\n    max: 100\n    default_value: " + modText.Text + "\n    is_flag: false\n    flag: ''\n  alt:\n    name: alternate\n    abbr: alt\n    type: Numerical\n    min: 0\n    max: 16\n    default_value: 0\n    is_flag: false\n    flag: ''\n  shft:\n    name: tone shift\n    abbr: shft\n    type: Numerical\n    min: -36\n    max: 36\n    default_value: 0\n    is_flag: false\n    flag: ''\n  shfc:\n    name: tone shift (curve)\n    abbr: shfc\n    type: Curve\n    min: -1200\n    max: 1200\n    default_value: 0\n    is_flag: false\n    flag: ''\n  tenc:\n    name: tension (curve)\n    abbr: tenc\n    type: Curve\n    min: -100\n    max: 100\n    default_value: 0\n    is_flag: false\n    flag: ''\n  voic:\n    name: voicing (curve)\n    abbr: voic\n    type: Curve\n    min: 0\n    max: 100\n    default_value: 100\n    is_flag: false\n    flag: ''";
                 
                 ustx += "tracks:\n";
                 // track 반복
@@ -286,6 +287,11 @@ namespace TrackMaker
         private void bpmScroll_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
         {
             bpmText.Text = bpmScroll.Value.ToString();
+        }
+
+        private void modScroll_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+            modText.Text = modScroll.Value.ToString();
         }
     }
 }

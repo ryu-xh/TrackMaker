@@ -12,8 +12,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="{x:Static local:Strings.Track}" VerticalAlignment="Top"/>
         <Button x:Name="OpenTextFile" Content="{x:Static local:Strings.OpenTextFile}" HorizontalAlignment="Left" Margin="125,10,0,0" VerticalAlignment="Top" Width="110" Height="22" Click="OpenTextFile_Click"/>
         <ComboBox x:Name="ToneCombo" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="110"/>
-        <RadioButton GroupName="separator" x:Name="SplitType0" Content="{x:Static local:Strings.SplitTypeDefault}" HorizontalAlignment="Left" Margin="298,37,0,0" VerticalAlignment="Top" IsThreeState="True" IsChecked="True"/>
-        <RadioButton GroupName="separator" x:Name="SplitType1" Content="{x:Static local:Strings.SplitTypeUnderscore}" HorizontalAlignment="Left" Margin="298,57,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton GroupName="separator" x:Name="SplitType0" Content="{x:Static local:Strings.SplitTypeDefault}" HorizontalAlignment="Left" Margin="361,37,0,0" VerticalAlignment="Top" IsThreeState="True" IsChecked="True"/>
+        <RadioButton GroupName="separator" x:Name="SplitType1" Content="{x:Static local:Strings.SplitTypeUnderscore}" HorizontalAlignment="Left" Margin="361,57,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <ComboBox x:Name="PhonemizerCombo" Margin="240,10,10.2,0" VerticalAlignment="Top" />
         <TextBox x:Name="bpmText" HorizontalAlignment="Left" Height="20" Margin="241,51,0,0" TextWrapping="Wrap" Text="120" VerticalAlignment="Top" Width="30" IsEnabled="False" Focusable="False" IsTabStop="False" TextAlignment="Center"/>
         <Label Content="BPM" HorizontalAlignment="Left" Margin="239,30,0,0" VerticalAlignment="Top" Height="24"/>
@@ -23,5 +23,8 @@
         <RadioButton GroupName="format" x:Name="shiftJisRadio" Content="shift-jis" HorizontalAlignment="Left" Margin="177,64,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,64,0,0" TextWrapping="Wrap" Text="{x:Static local:Strings.TextFormat}" VerticalAlignment="Top"/>
         <ListBox x:Name="PhonemizerList" Margin="241,105,10.2,10"/>
+        <TextBox x:Name="modText" HorizontalAlignment="Left" Height="20" Margin="295,52,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="30" IsEnabled="False" Focusable="False" IsTabStop="False" TextAlignment="Center"/>
+        <Label Content="MOD" HorizontalAlignment="Left" Margin="293,31,0,0" VerticalAlignment="Top" Height="24"/>
+        <ScrollBar x:Name="modScroll" HorizontalAlignment="Left" Height="34" Margin="327,38,0,0" VerticalAlignment="Top" Width="3" Value="100" Maximum="100" SmallChange="1" Scroll="modScroll_Scroll"/>
     </Grid>
 </Window>
